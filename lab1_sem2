@@ -1,0 +1,59 @@
+#include <iostream>
+
+
+
+class Priamo {
+private:
+    double length;
+    double width;
+public:
+    Priamo(double l, double w) : length(l), width(w) {}
+    double getLength() const {
+        return length;
+    }
+    double getWidth() const {
+        return width;
+    }
+    double Pl() const {
+        return length * width;
+    }
+    void printParam() const {
+        std::cout << "Длина: " << length << std::endl;
+        std::cout << "Ширина: " << width << std::endl;
+        std::cout << "Площадь: " << Pl() << std::endl;
+    }
+};
+int main() {
+    double minPl;
+    std::cout << "Введите минимальное значение площади: ";
+    std::cin >> minPl;
+    Priamo priamo1(4, 2.5);
+    Priamo priamo2(3.3, 6.6);
+    Priamo priamo3(5, 3.3);
+    std::cout << "Прямоугольник 1:" << std::endl;
+    priamo1.printParam();
+    std::cout << std::endl;
+    std::cout << "Прямоугольник 2:" << std::endl;
+    priamo2.printParam();
+    std::cout << std::endl;
+    std::cout << "Прямоугольник 3:" << std::endl;
+    priamo3.printParam();
+    std::cout << std::endl;
+    std::cout << "Прямоугольники с площадью больше " << minPl << ":" << std::endl;
+    if (priamo1.Pl() > minPl) {
+        std::cout << "Прямоугольник 1:" << std::endl;
+        priamo1.printParam();
+        std::cout << std::endl;
+    }
+    if (priamo2.Pl() > minPl) {
+        std::cout << "Прямоугольник 2:" << std::endl;
+        priamo2.printParam();
+        std::cout << std::endl;
+    }
+    if (priamo3.Pl() > minPl) {
+        std::cout << "Прямоугольник 3:" << std::endl;
+        priamo3.printParam();
+        std::cout << std::endl;
+    }
+    return 0;
+}
